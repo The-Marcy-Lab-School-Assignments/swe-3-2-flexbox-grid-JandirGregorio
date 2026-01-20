@@ -41,17 +41,13 @@ header>input {
 footer {
   border-top: 1px solid #d1d1d1;
   padding-top: 20px;
+  margin-top: 20px;
 }
 
 /* ================================ */
 /* Add your CSS below this line */
 /* ================================ */
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 nav {
   display: flex;
@@ -60,6 +56,11 @@ nav {
 
 header {
   padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 main {
@@ -81,6 +82,12 @@ aside ul {
   gap: 10px;
   white-space: nowrap;
 }
+
+.side-bar-item:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .grid-container {
   display: grid;
   gap: 20px;
@@ -95,8 +102,19 @@ figcaption {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  transition: .5s;
 }
 
+.grid-card:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 60px gray;
+}
+
+@media (max-width: 576px){
+  aside {
+    display: none;
+  }
+}
 @media (min-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
@@ -106,5 +124,11 @@ figcaption {
 @media (min-width: 992px) {
   .grid-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
