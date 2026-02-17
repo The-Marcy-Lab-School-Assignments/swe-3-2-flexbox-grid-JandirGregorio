@@ -23,26 +23,112 @@ header {
   border-bottom: 1px solid #d1d1d1;
 }
 
-nav > a {
+nav>a {
   font-size: 1.3rem;
   text-decoration: none;
   color: #333;
   font-weight: bold;
 }
 
-nav > a:hover {
+nav>a:hover {
   text-decoration: underline;
 }
 
-header > input {
+header>input {
   padding: 10px 20px;
 }
 
 footer {
   border-top: 1px solid #d1d1d1;
   padding-top: 20px;
+  margin-top: 20px;
 }
 
 /* ================================ */
 /* Add your CSS below this line */
 /* ================================ */
+
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+header {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 40px;
+}
+
+
+section {
+  display: flex;
+  gap: 40px;
+}
+
+aside ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.side-bar-item:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.grid-container {
+  display: grid;
+  gap: 20px;
+  flex: 1;
+}
+
+figcaption {
+  font-weight: bold;
+}
+
+.grid-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: .5s;
+}
+
+.grid-card:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 60px gray;
+}
+
+@media (max-width: 576px){
+  aside {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
